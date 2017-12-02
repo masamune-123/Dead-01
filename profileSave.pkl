@@ -1,0 +1,16 @@
+(lp0
+(dp1
+S'displayName'
+p2
+S''
+p3
+sS'Saved'
+p4
+I00
+sS'statusMessage'
+p5
+g3
+sS'pictureStatus'
+p6
+g3
+sa.

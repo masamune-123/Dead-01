@@ -65,6 +65,9 @@ class LINE:
   def updateSettings(self, settingObject):
     return self.Talk.client.updateSettings(0, settingObject)
 
+  def updateDisplayPicture(self, hash_id):
+    return self.Talk.client.updateProfileAttribute(0, 8, hash_id)
+
 
   """Operation"""
 
@@ -114,9 +117,6 @@ class LINE:
             raise Exception('Upload image failure.')
         #r.content
         return True
-  def removeAllMessages(self, lastMessageId):
-	return self.Talk.client.removeAllMessages(0, lastMessageId)
-
   def sendEvent(self, messageObject):
         return self._client.sendEvent(0, messageObject)
 
@@ -193,20 +193,11 @@ class LINE:
   def getHiddenContactMids(self):
         return self.Talk.client.getHiddenContactMids()
 
-  def CloneContactProfile(self, mid):
-	contact = self.getContact(mid)
-	profile = self.getProfile()
-	profile.displayName = contact.displayName
-	profile.statusMessage = contact.statusMessage
-	profile.pictureStatus = contact.pictureStatus
-	self.updateDisplayPicture(profile.pictureStatus)
-	return self.updateProfile(profile)
 
-  def updateDisplayPicture(self, hash_id):
-	return self.Talk.client.updateProfileAttribute(0, 8, hash_id)
+  """Group"""
 
-
-  """Group"""                                                                                                                                                         
+  def findGroupByTicket(self, ticketId):
+        return self.Talk.client.findGroupByTicket(ticketId)
 
   def acceptGroupInvitation(self, groupId):
         return self.Talk.client.acceptGroupInvitation(0, groupId)
@@ -323,9 +314,7 @@ class LINE:
 
       prof = self.getProfile()
 
-      print("==============[Cat_Bot]==============")
-      print("     Thanks for TCR and my friend")
-      print("=====================================")
+      print("R.A-BOT")
       print("mid -> " + prof.mid)
       print("name -> " + prof.displayName)
       print("authToken -> " + self.authToken)
