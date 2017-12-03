@@ -144,7 +144,7 @@ autocancel = {}
 autoinvite = []
 autoleaveroom = []
 
-admins = ["u8e24585f8677458d62ce174ff6dacc83","uf291388a1ed2cb1a0864b84a7b6106a6"]
+admins = ["ufc3d3114965059a5210f69c2a508d34a"]
 Rx5 = ["u406133ad4d3fbe50a2f4d51ea081d050"]
 Rx4 = ["u406133ad4d3fbe50a2f4d51ea081d050"]
 Rx3 = ["u406133ad4d3fbe50a2f4d51ea081d050"]
@@ -163,9 +163,9 @@ wait = {
     'leaveRoom':False,
     'timeline':False,
     'autoAdd':True,
-    'message':"Owner http://line-tcr.py/ti/p/~api2001",
+    'message':"Owner http://line-tcr.py/ti/p/~api2003",
     "lang":"JP",
-    "comment":"Auto like By.•─✯͜͡ʜᴀᴄᴋᴇʀ ʜᴀᴄᴋᴇʀ͜͡ ✯─•http://line.me/ti/p/~api2001",
+    "comment":"Auto like By.•─✯͜͡ʜᴀᴄᴋᴇʀ ʜᴀᴄᴋᴇʀ͜͡ ✯─•http://line.me/ti/p/~api2003",
     "likeOn":True,
     "commentOn":True,
     "commentBlack":{},
@@ -481,7 +481,7 @@ def bot(op):
                     cl.sendText(msg.to,msg.text)
             elif msg.text is None:
                 return
-            elif msg.text in ["help","Help","HELP"]:
+            elif msg.text in ["Cmd","Help","HELP"]:
                 if wait["lang"] == "JP":
                     cl.sendText(msg.to,helpMessage)
                 else:
@@ -1491,7 +1491,7 @@ def bot(op):
                 kc.sendText(msg.to,"ƁƠƬ ԼƖƝЄ 4")
                 ka.sendText(msg.to,"ƁƠƬ ԼƖƝЄ 5")
 #----------------------------------------------------------
-            elif msg.text == "Setpoint":
+            elif msg.text == "@set":
               if msg.from_ in admin:
                 cl.sendText(msg.to, "sᴇᴛ ᴛʜᴇ ʟᴀsᴛsᴇᴇɴs' ᴘᴏɪɴᴛ(｀・ω・´)")
                 try:
@@ -1505,7 +1505,7 @@ def bot(op):
                 wait2['setTime'][msg.to] = datetime.strftime(now2,"%H:%M")
                 wait2['ROM'][msg.to] = {}
                 print wait2
-            elif msg.text == "Setcheck":
+            elif msg.text == "@read":
               if msg.from_ in admin:
 		  if msg.to in wait2['readPoint']:
 	            if wait2["ROM"][msg.to].items() == []:
@@ -1697,8 +1697,8 @@ def bot(op):
                     else:
                         cl.sendText(msg.to, "Out Of Range!")
 #-----------------------------------------------
-            elif "Steal dp @" in msg.text:
-                nama = msg.text.replace("Steal dp @","")
+            elif "Pict @" in msg.text:
+                nama = msg.text.replace("Pict @","")
                 target = nama.rstrip(' ')
                 van = cl.getGroup(msg.to)
                 for linedev in van.members:
@@ -1707,9 +1707,9 @@ def bot(op):
                         PATH = "http://dl.profile.line-cdn.net/" + midddd.pictureStatus
                     cl.sendImageWithURL(msg.to,PATH)
 #-----------------------------------------------
-            elif "Steal home @" in msg.text:
+            elif "Cover @" in msg.text:
                 print "[Command]dp executing"
-                _name = msg.text.replace("Steal home @","")
+                _name = msg.text.replace("Cover @","")
                 gs = cl.getGroup(msg.to)
                 targets = []
                 for g in gs.members:
@@ -1727,9 +1727,9 @@ def bot(op):
                             pass
                 print "[Command]dp executed"
 #-----------------------------------------------
-            elif "Speed" in msg.text:
+            elif msg.text in ["Responsetie"]:
                 start = time.time()
-                cl.sendText(msg.to, "ᴘʀᴏɢʀᴇss...")
+                print("Responsetime")
                 elapsed_time = time.time() - start
                 cl.sendText(msg.to, "%sseconds" % (elapsed_time))    
                 ki.sendText(msg.to, "%sseconds" % (elapsed_time))    
@@ -1738,11 +1738,12 @@ def bot(op):
                 kc.sendText(msg.to, "%sseconds" % (elapsed_time))    
                 ka.sendText(msg.to, "%sseconds" % (elapsed_time))    
 #-----------------------------------------------
-            elif "Sp" in msg.text:
+            elif msg.text in ["sp","Sp","Speed"]:
                 start = time.time()
-                cl.sendText(msg.to, "ᴘʀᴏɢʀᴇss...")
+                print("sp","Sp","Speed")
                 elapsed_time = time.time() - start
-                cl.sendText(msg.to, "%sseconds" % (elapsed_time))    
+                cl.sendText(msg.to, "ᴘʀᴏɢʀᴇss..")
+                cl.sendText(msg.to, "%ssec" % (elapsed_time))
 #-----------------------------------------------             
             elif msg.text == "Save":
                 me = cl.getProfile()
