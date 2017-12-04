@@ -9,27 +9,28 @@ import re,string,os
 import os.path,sys,urllib,shutil,subprocess,pickle
 
 cl = LINETCR.LINE()
-cl.login(token="EngnFSdMScgwP2TPnlBa.+d0XfjzqwAuHd2NcPqJtsG.21TBNZaWCppDJ9JneZE0tTaf/oTHtuFQNuZPrvfkadI=")
+cl.login(qr=True)
 cl.loginResult()
 
 ki = LINETCR.LINE()
-ki.login(token="EnFji2k4V1snAftj9jRd.UP4b/uC6Y1cqRGWJgyJjpq.1TeZHtZVvisavft1odOvl/dH6r4WyJxFONpsOryBK+s=")
+ki.login(qr=True)
+ki.login(
 ki.loginResult()
 
 kk = LINETCR.LINE()
-kk.login(token="En5CiFTnwq1ibb7x7FI2.nUUshlBiaw9YBIDeS9ju0G.qMyzFJEtwW2BDrnk1dksE7+Uyj5Kr+xyjbCbBhG7ZFc=")
+kk.login(qr=True)
 kk.loginResult()
 
 ks = LINETCR.LINE()
-ks.login(token="EnEnyo2O8tnM6GTeC9b5.NnHpPoE/PP8TX3VbhcJBzq.qpZwR3Kw70iINWftjzJlehGyRH+pJBlwHA/q8bHZ/aM=")
+ks.login(qr=True)
 ks.loginResult()
 
 kc = LINETCR.LINE()
-kc.login(token="EnCOH4TgO4waOqf2Zrvb.Zdpo9FAhzNAYdHKZ/N2f2W.PzPts4AaHEscZ4xaff60p8MhVY8Eoz0fF9jjvQ8IrLM=")
+kc.login(qr=True)
 kc.loginResult()
 
 ka = LINETCR.LINE()
-ka.login(token="Ent1ZvLr8vqMtMEiKYt0.X6jfVcILamUTBz72Y1YhWa.SK1XgBsQkuoUlA/C6ZjFpNGZrbyD+92L/Na+BjQa1Jc=")
+ka.login(qr=True)
 ka.loginResult()
 
 cl
