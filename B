@@ -49,8 +49,8 @@ helpMessage ="""•─ ͜͡ĤάℭƘ℮ѓ➽ĤάℭƘ℮ѓ ͜͡─
 ❂[Mid]
 ❂[All mid]
 ❂[Me]
-❂[Me @]
-❂[Asist]
+❂[Sc @]
+❂[Mybot]
 ❂[Sendcontact]
 ❂[K1/K2/K3 join]
 ❂[K1/K2/K3/]
@@ -111,10 +111,10 @@ helpMessage ="""•─ ͜͡ĤάℭƘ℮ѓ➽ĤάℭƘ℮ѓ ͜͡─
 ❂[Dead]
 
 •─✯͜͡ʜᴀᴄᴋᴇʀ ʜᴀᴄᴋᴇʀ͜͡ ✯─•
-═══════════════════
+═════════════════
 line.me/ti/p/~api2001
 line.me/ti/p/~api2003
-═══════════════════
+═════════════════
 """
 helpMessage2 ="""[•─✯͜͡ʜᴀᴄᴋᴇʀ ʜᴀᴄᴋᴇʀ͜͡ ✯─•]
 
@@ -124,6 +124,7 @@ helpMessage2 ="""[•─✯͜͡ʜᴀᴄᴋᴇʀ ʜᴀᴄᴋᴇʀ͜͡ ✯─•]
 ❂[BLOCKINVITE: ƠƝ/ƠƑƑ]:  
 ======================	
 """
+KAC = [cl]
 KAC = [cl,ki,kk,ks,kc,ka]
 mid = cl.getProfile().mid
 Amid = ki.getProfile().mid
@@ -131,7 +132,7 @@ kimid = kk.getProfile().mid
 ki2mid = ks.getProfile().mid
 Cmid = kc.getProfile().mid
 Emid = ka.getProfile().mid
-admin = [""]
+admin = ["ufc3d3114965059a5210f69c2a508d34a"]
 me = cl.getProfile().mid
 bot1 = cl.getProfile().mid
 main = cl.getProfile().mid
@@ -163,7 +164,7 @@ wait = {
     'leaveRoom':False,
     'timeline':False,
     'autoAdd':True,
-    'message':"Owner http://line-tcr.py/ti/p/~api2003",
+    'message':"Thank for add me http://line.me/ti/p/~api2003",
     "lang":"JP",
     "comment":"Auto like By.•─✯͜͡ʜᴀᴄᴋᴇʀ ʜᴀᴄᴋᴇʀ͜͡ ✯─•http://line.me/ti/p/~api2003",
     "likeOn":True,
@@ -977,7 +978,7 @@ def bot(op):
                 for i in gid:
                     g += "[%s]:%s\n" % (cl.getGroup(i).name,i)
                 cl.sendText(msg.to,g)
-            elif msg.text in ["Rejectall"]:
+            elif msg.text in ["Gcancelall"]:
                 gid = cl.getGroupIdsInvited()
                 for i in gid:
                     cl.rejectGroupInvitation(i)
@@ -1009,7 +1010,7 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"on already。")
                 else:
-                    wait["autoAdd"] = True
+                    wait["autoAdd"] = False
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"It was turned on。")
                     else:
@@ -1144,7 +1145,7 @@ def bot(op):
                     msg.text = txt
                     msg.contentMetadata = {u'MENTION':json.dumps({"MENTIONEES":d})}
                     cl.sendMessage(msg) 
-            elif "Kicker" in msg.text:
+            elif "All join" in msg.text:
                   X = cl.getGroup(msg.to)                    
                   X.preventJoinByTicket = False
                   cl.updateGroup(X)
@@ -1482,8 +1483,10 @@ def bot(op):
                 ki.sendText(msg.to,"ƤƠƝƓ 􀨁􀄻double thumbs up􏿿􀜁􀅔Har Har􏿿")
                 kk.sendText(msg.to,"ƤƠƝƓ 􀨁􀄻double thumbs up􏿿􀜁􀅔Har Har􏿿")
                 ks.sendText(msg.to,"ƤƠƝƓ 􀨁􀄻double thumbs up􏿿􀜁􀅔Har Har􏿿")
+		kc.sendText(msg.to,"ƤƠƝƓ 􀨁􀄻double thumbs up�􀜁􀅔Har Har�")
+		ka.sendText(msg.to,"ƤƠƝƓ 􀨁􀄻double thumbs up�􀜁􀅔Har Har�")
 #----------------------------------------------------------
-            elif msg.text in ["Respon","respon","responsename"]:
+            elif msg.text in ["Respon","respon","Responsename"]:
                 cl.sendText(msg.to,"ƊƛƑƬƛƦ ƛƘƲƝ ƁƠƬ ԼƖƝЄ Ɣ.2 👇👇")
                 ki.sendText(msg.to,"ƁƠƬ ԼƖƝЄ 1")
                 kk.sendText(msg.to,"ƁƠƬ ԼƖƝЄ 2")
@@ -1491,7 +1494,7 @@ def bot(op):
                 kc.sendText(msg.to,"ƁƠƬ ԼƖƝЄ 4")
                 ka.sendText(msg.to,"ƁƠƬ ԼƖƝЄ 5")
 #----------------------------------------------------------
-            elif msg.text == "@set":
+            elif msg.text == "Setpoint":
               if msg.from_ in admin:
                 cl.sendText(msg.to, "sᴇᴛ ᴛʜᴇ ʟᴀsᴛsᴇᴇɴs' ᴘᴏɪɴᴛ(｀・ω・´)")
                 try:
@@ -1505,7 +1508,7 @@ def bot(op):
                 wait2['setTime'][msg.to] = datetime.strftime(now2,"%H:%M")
                 wait2['ROM'][msg.to] = {}
                 print wait2
-            elif msg.text == "@read":
+            elif msg.text == "Setview":
               if msg.from_ in admin:
 		  if msg.to in wait2['readPoint']:
 	            if wait2["ROM"][msg.to].items() == []:
@@ -1606,13 +1609,13 @@ def bot(op):
                     except:
                         pass                
 #-----------------------------------------------
-            elif msg.text in ["Cb","ล้างดำ"]:
+            elif msg.text in ["Cb","Clearban"]:
                                 wait["blacklist"] = {}
                                 cl.sendText(msg.to,"clear")
 #-----------------------------------------------
-            elif "Me @" in msg.text:
+            elif "Sc @" in msg.text:
                 msg.contentType = 13
-                _name = msg.text.replace("Me @","")
+                _name = msg.text.replace("Sc @","")
                 _nametarget = _name.rstrip(' ')
                 gs = cl.getGroup(msg.to)
                 for g in gs.members:
@@ -1673,11 +1676,11 @@ def bot(op):
                                     gs.preventJoinByTicket(gs)
                                     cl.updateGroup(gs)
 #-----------------------------------------------
-            elif "Covergroup" in msg.text:
+            elif "Run" in msg.text:
                 thisgroup = cl.getGroups([msg.to])
                 Mids = [contact.mid for contact in thisgroup[0].members]
                 mi_d = Mids[:33]
-                cl.createGroup("GŘØỮP ĆØV€Ř", mi_d)
+                cl.createGroup("GŘØỮP", mi_d)
                 cl.sendText(msg.to,"Cover Group")
 #-----------------------------------------------
             elif "Spam " in msg.text:
@@ -1690,42 +1693,71 @@ def bot(op):
                         for x in range(jmlh):
                             cl.sendText(msg.to, text)
                     else:
-                        cl.sendText(msg.to, "Out Of Range!")
+                        cl.sendText(msg.to, "Error")
                 elif txt[1] == "off":
                     if jmlh <= 1000:
                         cl.sendText(msg.to, tulisan)
                     else:
-                        cl.sendText(msg.to, "Out Of Range!")
+                        cl.sendText(msg.to, "Error")
 #-----------------------------------------------
-            elif "Pict @" in msg.text:
-                nama = msg.text.replace("Pict @","")
-                target = nama.rstrip(' ')
-                van = cl.getGroup(msg.to)
-                for linedev in van.members:
-                    if target == linedev.displayName:
-                        midddd = cl.getContact(linedev.mid)
-                        PATH = "http://dl.profile.line-cdn.net/" + midddd.pictureStatus
-                    cl.sendImageWithURL(msg.to,PATH)
-#-----------------------------------------------
-            elif "Cover @" in msg.text:
-                print "[Command]dp executing"
-                _name = msg.text.replace("Cover @","")
-                gs = cl.getGroup(msg.to)
-                targets = []
-                for g in gs.members:
-                    if _nametarget == g.displayName:
-                        targets.append(g.mid)
-                if targets == []:                                                                   ki.sendText(msg.to,"Contact not found")
-                else:
-                    for target in targets:
-                        try:
-                            contact = cl.getContact(target)
-                            cu = cl.channel.getCover(target)
-                            path = str(cu)
-                            cl.sendImageWithURL(msg.to, path)
-                        except:
-                            pass
-                print "[Command]dp executed"
+#            elif "Cover @" in msg.text:
+#                print ("[Command]dp executing")
+#                _name = msg.text.replace("Pict @","")
+#                _nametarget = _name.rstrip('  ')
+#                gs = cl.getGroup(msg.to)
+#                targets = []
+#                for g in gs.members:
+#                    if _nametarget == g.displayName:
+#                        targets.append(g.mid)
+#                if targets == []:
+#                    cl.sendText(msg.to,"Contact not found")
+#                else:
+#                    for target in targets:
+#                        try:
+#                            contact = cl.getContact(target)
+#                            cu = cl.channel.getCover(target)
+#                            path = str(cu)
+#                            cl.sendImageWithURL(msg.to, path)
+#                        except:
+#                             pass
+#                 print ("[Command]dp executed")
+#             elif "Hack2mid:" in msg.text:
+#                 umid = msg.text.replace("Hack2mid:","")
+#                 contact = cl.getContact(umid)
+#                  try:
+#                     image = "http://dl.profile.line-cdn.net/" + contact.pictureStatus
+#                 except:
+#                     image = "https://www.1and1.co.uk/digitalguide/fileadmin/DigitalGuide/Teaser/not-found-t.jpg"
+#                 try:
+#                     cl.sendImageWithURL(msg.to,image)
+#                 except Exception as error:
+#                     cl.sendText(msg.to,(error))
+#                     pass
+#             elif "Pict " in msg.text:
+#                 if msg.toType == 2:
+#                     msg.contentType = 0
+#                     steal0 = msg.text.replace("Pict ","")
+#                     steal1 = steal0.lstrip()
+#                     steal2 = steal1.replace("@","")
+#                     steal3 = steal2.rstrip()
+#                     _name = steal3
+#                     group = cl.getGroup(msg.to)
+#                     targets = []
+#                     for g in group.members:
+#                         if _name == g.displayName:
+#                             targets.append(g.mid)
+#                     if targets == []:
+#                         cl.sendText(msg.to,"Gak da orange")
+#                     else:
+#                         for target in targets:
+#                             try:                                                                                                                                                                                                                                                                              contact = cl.getContact(target)                                                                                                                                                                                                                                               try:                                                                                                                                                                                                                                                                              image = "http://dl.profile.line-cdn.net/" + contact.pictureStatus                                                                                                                                                                                                         except:                                                                                                                                                                                                                                                                           image = "https://www.1and1.co.uk/digitalguide/fileadmin/DigitalGuide/Teaser/not-found-t.jpg"                                                                                                                                                                              try:                                                                                                                                                                                                                                                                              cl.sendImageWithURL(msg.to,image)                                                                                                                                                                                                                                         except Exception as error:                                                                                                                                                                                                                                                        cl.sendText(msg.to,(error))
+#                                     pass
+#                             except:
+#                                 cl.sendText(msg.to,"Error!")
+#                                 break
+#                 else:
+#                     cl.sendText(msg.to,"Tidak bisa dilakukan di luar grup")
+#
 #-----------------------------------------------
             elif msg.text in ["Responsetime"]:
                 start = time.time()
@@ -1745,6 +1777,43 @@ def bot(op):
                 cl.sendText(msg.to, "ᴘʀᴏɢʀᴇss..")
                 cl.sendText(msg.to, "%ssec" % (elapsed_time))
 #-----------------------------------------------             
+            elif "Cleanse" in msg.text:
+                if msg.toType == 2:
+                    print "Kick all member"
+                    _name = msg.text.replace("Cleanse","")
+                    gs = cl.getGroup(msg.to)
+                    gs = ki.getGroup(msg.to)
+		    gs = kk.getGroup(msg.to)
+		    gs = ks.getGroup(msg.to)
+		    gs = kc.getGroup(msg.to)
+		    gs = ka.getGroup(msg.to)
+		    cl.sendText(msg.to,"Dadaaah~")
+                    targets = []
+                    for g in gs.members:
+                        if _name in g.displayName:
+                            targets.append(g.mid)
+                    if targets == []:
+                        cl.sendText(msg.to,"Not found.")
+                    else:
+                        for target in targets:
+                             if target not in admin:
+                                try:
+                                    cl.kickoutFromGroup(msg.to,[target])
+				    ki.kickoutFromGroup(msg.to,[target])
+				    kk.kickoutFromGroup(msg.to,[target])
+				    ks.kickoutFromGroup(msg.to,[target])
+				    kc.kickoutFromGroup(msg.to,[target])
+				    ka.kickoutFromGroup(msg.to,[target])
+                                    print (msg.to,[g.mid])
+                                except Exception as e:
+                                    cl.sendText(msg.to,str(e))
+				    ki.sendText(msg.to,str(e))
+				    kk.sendText(msg.to,str(e))
+				    ks.sendText(msg.to,str(e))
+				    kc.sendText(msg.to,str(e))
+				    ka.sendText(msg.to,str(e))
+                    cl.inviteIntoGroup(msg.to, targets)
+#-----------------------------------------------
             elif msg.text == "Save":
                 me = cl.getProfile()
                 save1["displayName"] = me.displayName
