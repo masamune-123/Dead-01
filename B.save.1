@@ -1346,20 +1346,16 @@ def bot(op):
                                     json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
                                     cl.sendText(msg.to,"ヽ( ^ω^)ﾉ ƧƲƇƇЄƧƧ")
                                 except:
-                                    cl.sendText(msg.to,"ヽ( ^ω^)ﾉ ƧƲƇƇЄƧƧ")
-#-----------------------------------------------------------
-            elif "Say-en " in msg.text:
-                say = msg.text.replace("Say-en ","")
-                lang = 'en'
-                tts = gTTS(text=say, lang=lang)
-                tts.save("hasil.mp3")
-                cl.sendAudio(msg.to,"hasil.mp3")
-            elif "Say-th " in msg.text:
-                say = msg.text.replace("Say-th ","")
-                lang = 'th'
-                tts = gTTS(text=say, lang=lang)
-                tts.save("hasil.mp3")
-                cl.sendAudio(msg.to,"hasil.mp3")
+                                    cl.sendTex
+
+
+
+
+
+
+
+
+
 #-----------------------------------------------------------
             elif "Mid @" in msg.text:
                 _name = msg.text.replace("Mid @","")

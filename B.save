@@ -3,7 +3,6 @@
 import LINETCR
 from LINETCR.lib.curve.ttypes import *
 from io import StringIO
-from gtts import gTTS
 from datetime import datetime
 import time,random,sys,json,codecs,threading,glob,sys
 import re,string,os
@@ -1348,19 +1347,6 @@ def bot(op):
                                 except:
                                     cl.sendText(msg.to,"ヽ( ^ω^)ﾉ ƧƲƇƇЄƧƧ")
 #-----------------------------------------------------------
-            elif "Say-en " in msg.text:
-                say = msg.text.replace("Say-en ","")
-                lang = 'en'
-                tts = gTTS(text=say, lang=lang)
-                tts.save("hasil.mp3")
-                cl.sendAudio(msg.to,"hasil.mp3")
-            elif "Say-th " in msg.text:
-                say = msg.text.replace("Say-th ","")
-                lang = 'th'
-                tts = gTTS(text=say, lang=lang)
-                tts.save("hasil.mp3")
-                cl.sendAudio(msg.to,"hasil.mp3")
-#-----------------------------------------------------------
             elif "Mid @" in msg.text:
                 _name = msg.text.replace("Mid @","")
                 _nametarget = _name.rstrip(' ')
@@ -1494,11 +1480,11 @@ def bot(op):
                        print "Done spam" 
 #-----------------------------------------------------------
             elif msg.text in ["PING","Ping","ping"]:
-                ki.sendText(msg.to,"ƤƠƝƓ 􀨁􀄻double thumbs up􏿿􀜁􀅔Har Har􏿿")
-                kk.sendText(msg.to,"ƤƠƝƓ 􀨁􀄻double thumbs up􏿿􀜁􀅔Har Har􏿿")
-                ks.sendText(msg.to,"ƤƠƝƓ 􀨁􀄻double thumbs up􏿿􀜁􀅔Har Har􏿿")
-		kc.sendText(msg.to,"ƤƠƝƓ 􀨁􀄻double thumbs up�􀜁􀅔Har Har�")
-		ka.sendText(msg.to,"ƤƠƝƓ 􀨁􀄻double thumbs up�􀜁􀅔Har Har�")
+                ki.sendText(msg.to,"
+                kk.sendText(msg.to,"
+                ks.sendText(msg.to,"
+		kc.sendText(msg.to,"
+		ka.sendText(msg.to,"
 #----------------------------------------------------------
             elif msg.text in ["Respon","respon","Responsename"]:
                 cl.sendText(msg.to,"ƊƛƑƬƛƦ ƛƘƲƝ ƁƠƬ ԼƖƝЄ Ɣ.2 👇👇")
