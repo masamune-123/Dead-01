@@ -13,25 +13,25 @@ cl = LINETCR.LINE()
 cl.login(qr=True)
 cl.loginResult()
 
-#ki = LINETCR.LINE()
-#ki.login(qr=True)
-#ki.loginResult()
+ki = LINETCR.LINE()
+ki.login(qr=True)
+ki.loginResult()
 
-#kk = LINETCR.LINE()
-#kk.login(qr=True)
-#kk.loginResult()
+kk = LINETCR.LINE()
+kk.login(qr=True)
+kk.loginResult()
 
-#ks = LINETCR.LINE()
-#ks.login(qr=True)
-#ks.loginResult()
+ks = LINETCR.LINE()
+ks.login(qr=True)
+ks.loginResult()
 
-#kc = LINETCR.LINE()
-#kc.login(qr=True)
-#kc.loginResult()
+kc = LINETCR.LINE()
+kc.login(qr=True)
+kc.loginResult()
 
-#ka = LINETCR.LINE()
-#ka.login(qr=True)
-#ka.loginResult()
+ka = LINETCR.LINE()
+ka.login(qr=True)
+ka.loginResult()
 
 cl
 
@@ -125,13 +125,13 @@ helpMessage2 ="""[•─✯͜͡ʜᴀᴄᴋᴇʀ ʜᴀᴄᴋᴇʀ͜͡ ✯─•]
 ❂[BLOCKINVITE: ƠƝ/ƠƑƑ]:  
 ======================	
 """
-KAC = [cl]
+KAC = [cl,ki,kk,ks,kc,ka,]
 mid = cl.getProfile().mid
-#Amid = ki.getProfile().mid
-#kimid = kk.getProfile().mid
-#ki2mid = ks.getProfile().mid
-#Cmid = kc.getProfile().mid
-#Emid = ka.getProfile().mid
+Amid = ki.getProfile().mid
+kimid = kk.getProfile().mid
+ki2mid = ks.getProfile().mid
+Cmid = kc.getProfile().mid
+Emid = ka.getProfile().mid
 admin = ["ufc3d3114965059a5210f69c2a508d34a"]
 me = cl.getProfile().mid
 bot1 = cl.getProfile().mid

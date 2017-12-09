@@ -52,7 +52,7 @@ helpMessage ="""•─ ͜͡ĤάℭƘ℮ѓ➽ĤάℭƘ℮ѓ ͜͡─
 ❂[Me]
 ❂[Sc @]
 ❂[Mybot]
-❂[Sendcontact]
+❂[Asist]
 ❂[K1/K2/K3 join]
 ❂[K1/K2/K3/]
 ❂[K1/K2/K3 fuck:]
@@ -557,7 +557,7 @@ def bot(op):
                 cl.sendMessage(msg)
                 msg.contentMetadata = {'mid': Emid}
                 cl.sendMessage(msg)
-            elif "Sendcontact" == msg.text:
+            elif "Asist" == msg.text:
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': mid}
                 cl.sendMessage(msg)
@@ -745,14 +745,14 @@ def bot(op):
                 ki.sendText(msg.to,Amid)
                 kk.sendText(msg.to,kimid)
                 ks.sendText(msg.to,ki2mid)      
-            elif "Wkwk" == msg.text:
+            elif "555" == msg.text:
                 msg.contentType = 7
                 msg.text = None
                 msg.contentMetadata = {
                                      "STKID": "100",
                                      "STKPKGID": "1",
                                      "STKVER": "100" }
-                ks.sendMessage(msg)
+                cl.sendMessage(msg)
             elif "Sue" == msg.text:
                 msg.contentType = 7
                 msg.text = None
@@ -768,7 +768,7 @@ def bot(op):
                                      "STKID": "247",
                                      "STKPKGID": "3",
                                      "STKVER": "100" }
-                ks.sendMessage(msg)
+                cl.sendMessage(msg)
             elif "TL:" in msg.text:
                 tl_text = msg.text.replace("TL:","")
                 cl.sendText(msg.to,"line://home/post?userMid="+mid+"&postId="+cl.new_post(tl_text)["result"]["post"]["postInfo"]["postId"])
@@ -811,6 +811,22 @@ def bot(op):
                     ks.updateProfile(profile)
                     ks.sendText(msg.to,"The name " + string + " I did NI change。")
 #--------------------------------------------------------
+            elif "K4 upname:" in msg.text:
+                string = msg.text.replace("K4 up name:","")
+                if len(string.decode('utf-8')) <= 20:
+                    profile = kc.getProfile()
+                    profile.displayName = string
+                    kc.updateProfile(profile)
+                    kc.sendText(msg.to,"The name " + string + " I did NI change。")
+#--------------------------------------------------------
+            elif "K5 upname:" in msg.text:
+                string = msg.text.replace("K5 up name:","")
+                if len(string.decode('utf-8')) <= 20:
+                    profile = ka.getProfile()
+                    profile.displayName = string
+                    ka.updateProfile(profile)
+                    ka.sendText(msg.to,"The name " + string + " I did NI change。")
+#--------------------------------------------------------
             elif "K1 upstatus: " in msg.text:
                 string = msg.text.replace("K1 upstatus: ","")
                 if len(string.decode('utf-8')) <= 500:
@@ -832,8 +848,8 @@ def bot(op):
                     profile_C.statusMessage = string
                     ks.updateProfile(profile_C)
                     ks.sendText(msg.to,"display message " + string + " done")
-            elif "Mic:" in msg.text:
-                mmid = msg.text.replace("Mic:","")
+            elif "Mc:" in msg.text:
+                mmid = msg.text.replace("Mc:","")
                 msg.contentType = 13
                 msg.contentMetadata = {"mid":mmid}
                 cl.sendMessage(msg)
@@ -1197,6 +1213,30 @@ def bot(op):
                   ks.updateGroup(G)
                   Ticket = ks.reissueGroupTicket(msg.to)                           
 
+            elif msg.text in ["K4 join"]:
+                  X = cl.getGroup(msg.to)
+                  X.preventJoinByTicket = False
+                  cl.updateGroup(X)
+                  invsend = 0
+                  Ti = cl.reissueGroupTicket(msg.to)
+                  kc.acceptGroupInvitationByTicket(msg.to,Ti)
+                  G = kc.getGroup(msg.to)
+                  G.preventJoinByTicket = True
+                  kc.updateGroup(G)
+                  Ticket = kc.reissueGroupTicket(msg.to)
+
+            elif msg.text in ["K5 join"]:
+                  X = cl.getGroup(msg.to)
+                  X.preventJoinByTicket = False
+                  cl.updateGroup(X)
+                  invsend = 0
+                  Ti = cl.reissueGroupTicket(msg.to)
+                  ka.acceptGroupInvitationByTicket(msg.to,Ti)
+                  G = ka.getGroup(msg.to)
+                  G.preventJoinByTicket = True
+                  ka.updateGroup(G)
+                  Ticket = ka.reissueGroupTicket(msg.to)
+           
             elif msg.text in ["Bye"]:
                 if msg.toType == 2:
                    X = cl.getGroup(msg.to)
@@ -1354,6 +1394,7 @@ def bot(op):
                 tts = gTTS(text=say, lang=lang)
                 tts.save("hasil.mp3")
                 cl.sendAudio(msg.to,"hasil.mp3")
+
             elif "Say-th " in msg.text:
                 say = msg.text.replace("Say-th ","")
                 lang = 'th'
@@ -1581,7 +1622,7 @@ def bot(op):
                             print (msg.to,[jj])
                         except:
                             pass							
-            elif msg.text in ["single"]:
+            elif msg.text in ["Single"]:
                 if msg.toType == 2:
                     group = cl.getGroup(msg.to)
                     gMembMids = [contact.mid for contact in group.invitee]
@@ -1625,7 +1666,7 @@ def bot(op):
 #-----------------------------------------------
             elif msg.text in ["Cb","Clearban"]:
                                 wait["blacklist"] = {}
-                                cl.sendText(msg.to,"clear")
+                                cl.sendText(msg.to,"Success")
 #-----------------------------------------------
             elif "Sc @" in msg.text:
                 msg.contentType = 13
