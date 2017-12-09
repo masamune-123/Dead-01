@@ -10,27 +10,27 @@ import re,string,os
 import os.path,sys,urllib,shutil,subprocess,pickle
 
 cl = LINETCR.LINE()
-cl.login(token="EngnFSdMScgwP2TPnlBa.+d0XfjzqwAuHd2NcPqJtsG.21TBNZaWCppDJ9JneZE0tTaf/oTHtuFQNuZPrvfkadI=")
+cl.login(token="EnNBNoOrQFOULMzLou9a.+d0XfjzqwAuHd2NcPqJtsG.cJHBUGkiMERo5ftJosvVEqmOr9jj4aZn8GooI6CEhYE=")
 cl.loginResult()
 
 ki = LINETCR.LINE()
-ki.login(token="EnFji2k4V1snAftj9jRd.UP4b/uC6Y1cqRGWJgyJjpq.1TeZHtZVvisavft1odOvl/dH6r4WyJxFONpsOryBK+s=")
+ki.login(token="EnpYvRbcUpU2VXACKDpd.UP4b/uC6Y1cqRGWJgyJjpq.9+RzPQYWtbCXPsbkfGbWmLrWz62UkGGlomF7iFcIr+4=")
 ki.loginResult()
 
 kk = LINETCR.LINE()
-kk.login(token="En5CiFTnwq1ibb7x7FI2.nUUshlBiaw9YBIDeS9ju0G.qMyzFJEtwW2BDrnk1dksE7+Uyj5Kr+xyjbCbBhG7ZFc=")
+kk.login(token="EnBBFHGKeD5Bjamk1Ne2.nUUshlBiaw9YBIDeS9ju0G.6RkpNLdzaNyL0FrFHka6Sd+61n3Nir4/1uqtjFPClmc=")
 kk.loginResult()
 
 ks = LINETCR.LINE()
-ks.login(token="EnEnyo2O8tnM6GTeC9b5.NnHpPoE/PP8TX3VbhcJBzq.qpZwR3Kw70iINWftjzJlehGyRH+pJBlwHA/q8bHZ/aM=")
+ks.login(token="EnpxrpWLiJCFa0i9VaG5.NnHpPoE/PP8TX3VbhcJBzq.eyaGaz5jlxHRPzU/jqApKsumwQpHMnnXd1xalvlYJXM=")
 ks.loginResult()
 
 kc = LINETCR.LINE()
-kc.login(token="EnCOH4TgO4waOqf2Zrvb.Zdpo9FAhzNAYdHKZ/N2f2W.PzPts4AaHEscZ4xaff60p8MhVY8Eoz0fF9jjvQ8IrLM=")
+kc.login(token="En3QJXVRipIJyXEZRwnb.Zdpo9FAhzNAYdHKZ/N2f2W.Uez7vzjbcl1ill34lasoPO278FvP5u1FDDUsZnjmXMA=")
 kc.loginResult()
 
 ka = LINETCR.LINE()
-ka.login(token="Ent1ZvLr8vqMtMEiKYt0.X6jfVcILamUTBz72Y1YhWa.SK1XgBsQkuoUlA/C6ZjFpNGZrbyD+92L/Na+BjQa1Jc=")
+ka.login(token="EnnL1XfNDhGaxpGNFJF0.X6jfVcILamUTBz72Y1YhWa./MByIWCs1VZspIBz8XYSCedZZ2vATIg31IZ9tUM7RFQ=")
 ka.loginResult()
 
 cl
@@ -1346,16 +1346,20 @@ def bot(op):
                                     json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
                                     cl.sendText(msg.to,"ヽ( ^ω^)ﾉ ƧƲƇƇЄƧƧ")
                                 except:
-                                    cl.sendTex
-
-
-
-
-
-
-
-
-
+                                    cl.sendText(msg.to,"ヽ( ^ω^)ﾉ ƧƲƇƇЄƧƧ")
+#-----------------------------------------------------------
+            elif "Say-en " in msg.text:
+                say = msg.text.replace("Say-en ","")
+                lang = 'en'
+                tts = gTTS(text=say, lang=lang)
+                tts.save("hasil.mp3")
+                cl.sendAudio(msg.to,"hasil.mp3")
+            elif "Say-th " in msg.text:
+                say = msg.text.replace("Say-th ","")
+                lang = 'th'
+                tts = gTTS(text=say, lang=lang)
+                tts.save("hasil.mp3")
+                cl.sendAudio(msg.to,"hasil.mp3")
 #-----------------------------------------------------------
             elif "Mid @" in msg.text:
                 _name = msg.text.replace("Mid @","")
